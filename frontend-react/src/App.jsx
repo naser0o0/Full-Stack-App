@@ -5,8 +5,9 @@ import { router } from "./Routing/Router";
 function App() {
   return (
     <div>
-      <h1>Hallo App js</h1>
-      <RouterProvider route={router} />
+      <RouterProvider router={router} />
+      {/* <h1>Hallo App js</h1> */}
+
     </div>
   );
 }

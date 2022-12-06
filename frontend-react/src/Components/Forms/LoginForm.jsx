@@ -1,40 +1,53 @@
-import React, {useState} from 'react';
-import Layout from '../../layout/Layout';
+import React, { useState } from "react";
 // import { loginRequest } from '../controller/requestController';
+import "./FromStyle.css";
 
 
+export default function LoginForm() {
+  // const newUserSchema = {
+  //     username: "",
+  //     password: "",
 
-export default function LoginForm(){
+  // }
 
-    const newUserSchema = {
-        username: "",
-        password: "",
-       
-    }
+  // const [user, setUser]=useState();
 
-    const [user, setUser]=useState();
+  // function handleLoginForm (e){
+  //    setUser(prev=>({...prev, [e.target.name]: e.target.value}))
+  // }
 
+  // function handleLogin (e){
+  //     e.preventDefault();
+  //     loginRequest(user); // post request to server
+  // }
 
-    // function handleLoginForm (e){
-    //    setUser(prev=>({...prev, [e.target.name]: e.target.value}))
-    // }
+  return (
+    <>
+      <div className='wrapper'>
 
-    // function handleLogin (e){
-    //     e.preventDefault();
-    //     loginRequest(user); // post request to server
-    // }
+        <form className='form'>
+          <h1>Login form </h1>
+          <label>
+            <b>Username</b>
+          </label>
+          <input type='text' name='username' placeholder='username' required />
+          <br />
+          <label>
+            <b>Password</b>
+          </label>
+          <input
+            type='password'
+            name='password'
+            placeholder='password'
+            required
+          />
+          <br />
+          <button type='submit' className='button'>
+            Login
+          </button>
+        </form>
 
-
-    return(
-        <Layout>
-            <div>
-            <h1>Login form </h1>
-            <form>
-                <input type="text" name="username" placeholder="username" required onChange={handleLoginForm}/><br/>
-                <input type="password" name="password" placeholder="password" required onChange={handleLoginForm}/><br/>
-                <button onClick={handleLogin}>Login</button>
-            </form>
-            </div>
-        </Layout>
-    )
+      </div>
+    </>
+  );
 }
