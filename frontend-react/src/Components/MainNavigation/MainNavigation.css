@@ -1,0 +1,39 @@
+.Navigation{
+
+    padding: 2px 32px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    background-color: yellowgreen;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item{
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+    align-items: center;
+}
+
+
+.nav-link .nav-btn {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    border-bottom: solid white ;
+}
+
+.nav-item:hover {
+    -ms-transform: scale(1.2); 
+    -webkit-transform: scale(1.2); 
+    transform: scale(1.2); 
+    -webkit-transition: .3s ease-in-out;
+     transition: .4s ease-in-out;
+  
+  }
