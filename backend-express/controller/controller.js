@@ -1,12 +1,16 @@
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import * as dotenv from "dotenv";
 import db from "../db/db.js";
-import blogPost from "../schemas/postSchema.js";
+import blogPost from "../models/postSchema.js";
+import asyncHandler from "../utilities/asyncHandler.js";
+import ErrorResponse from "../utilities/ErrorResponse.js";
 
 /**
  * Articles
  */
 export const getArticles = async (req, res) => {
   const blogPosts = await blogPost.find();
-  console.log(blogPosts);
   res.status(200).json(blogPosts);
 };
 export const createArticle = (req, res) => {
