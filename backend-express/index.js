@@ -2,7 +2,7 @@ import express from "express";
 import routes from "./routing/routes.js";
 
 const app = express();
-const PORT = 5000;
+const PORT = 5300;
 
 app.use(express.json());
 
