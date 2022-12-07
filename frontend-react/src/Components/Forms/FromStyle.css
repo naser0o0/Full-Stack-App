@@ -1,0 +1,38 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    min-height: 30rem;
+    padding: 1rem;
+}
+
+.form{
+    width: 30%;
+    padding: 1rem;
+    border: solid 1px rgb(202, 201, 201);
+}
+
+
+
+input, input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    opacity: 0.8;
+  }
+  

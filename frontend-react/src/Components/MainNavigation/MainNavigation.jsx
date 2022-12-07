@@ -1,28 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import './MainNavigation.css';
+
 
 export default function MainNavigation() {
+
+  const NavLinkStyles = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+      textDecoration: isActive ? "none" : "none",
+      color: isActive ? "#e6047e" : "black",
+      padding: "20px",
+      // borderBottom: isActive ? '': 'underline',
+    };
+  };
+
   return (
-    <nav>
-      <ul
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          minWidth: "70%",
-        }}
-      >
-        <li style={{ listStyleType: "none" }}>
-          <Link to='/'>Homepage</Link>
+    <nav className="Navigation">
+      <ul className="nav-link">
+        <li className="nav-item">
+          <NavLink to='/' style={NavLinkStyles}>Homepage</NavLink>
         </li>
-        <li style={{ listStyleType: "none" }}>
-          <Link to='/login'>Login</Link>
+        <li className="nav-item">
+          <NavLink to='/login' style={NavLinkStyles}>Login</NavLink>
         </li>
-        <li style={{ listStyleType: "none" }}>
-          <Link to='/registration'>Register</Link>
+        <li className="nav-item">
+          <NavLink to='/registration' style={NavLinkStyles}>Register</NavLink>
         </li>
-        <li style={{ listStyleType: "none" }}>
-          <Link to='*'>Error Page</Link>
-        </li>
+      
       </ul>
     </nav>
   );
