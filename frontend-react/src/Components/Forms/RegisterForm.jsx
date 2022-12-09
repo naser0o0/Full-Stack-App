@@ -1,20 +1,24 @@
 import React, { useState } from "react";
+import { register } from "../controller/requestController";
 
 export default function RegisterForm() {
-  const date = new Date();
-
   const newUserSchema = {
     firstname: "",
     lastname: "",
     email: "",
     password: "",
-    token: date.getTime(),
   };
 
   const [newUser, setNewUser] = useState(newUserSchema);
 
-  function handleRegisterForm(e) {}
-
+  function handleRegisterForm(e) {
+    setNewUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+  function handleRegistration(e) {
+    e.preventDefault();
+    register(newUser);
+  }
+  console.log(newUser);
   return (
     <>
       <div className="wrapper">
@@ -52,7 +56,7 @@ export default function RegisterForm() {
             onChange={handleRegisterForm}
           />
           <br />
-          <button className="button" onClick={handleRegistration}>
+          <button type="submit" className="button" onClick={handleRegistration}>
             Register
           </button>
         </form>

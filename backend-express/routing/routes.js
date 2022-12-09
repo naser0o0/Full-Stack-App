@@ -7,6 +7,8 @@ import {
   deleteArticle,
   userLogin,
   createUser,
+  deleteUser,
+  getUser,
 } from "../controller/controller.js";
 import {
   postSchemaJoi,
@@ -31,5 +33,7 @@ routes
 routes.route("/login").post(validateJoi(loginSchemaJoi), userLogin);
 
 routes.route("/register").post(validateJoi(userSchemaJoi), createUser);
+
+routes.route("/me/:id").get(getUser).delete(deleteUser);
 
 export default routes;
